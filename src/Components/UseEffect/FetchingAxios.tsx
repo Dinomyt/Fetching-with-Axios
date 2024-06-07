@@ -12,19 +12,21 @@ const FetchingAxios = () => {
   const [data, setData] = useState([]);
   const endpoints = ['posts', 'comments', 'albums', 'photos', 'todos', 'users'];
   const [users, setUsers] = useState<User[]>([]);
-  
+  const [error, setError] = useState("");
 
 
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/${endpoints[category]}`)
       .then(response => setUsers(response.data))
-      .catch(error => console.error("Error fetching data:", error));
+      // .catch(error => console.error("Error fetching data:", error))
+      .catch(error => setError(error.message));
   }, [category, endpoints]);
 
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/${endpoints[category]}`)
       .then(response => setData(response.data))
-      .catch(error => console.error("Error fetching data:", error));
+      // .catch(error => console.error("Error fetching data:", error))
+      .catch(error => setError(error.message));
   }, [category, endpoints]);
 
   return (
@@ -40,17 +42,20 @@ const FetchingAxios = () => {
       <ul>
         {users.map(user => 
             <li key={user.id}>
-                {user.id}{". "}{user.name};
+                {user.id + ". " + user.name};
             </li>
         )}
+        {error && <p className="danger">{error}</p>}
+
       </ul>
-        
+
       <ul>
         {data.map((item, index) => (
           <li key={index}>
             <pre>{JSON.stringify(item, null, 2)}</pre>
           </li>
         ))}
+        {error && <p className="danger">{error}</p>}
       </ul>
     </>
   );
