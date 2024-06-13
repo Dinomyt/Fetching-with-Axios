@@ -7,6 +7,9 @@ import { useState } from "react"
 // import AsyncAwait from "./Components/UseEffect/AsyncAwait"
 // import LoadingIndicator from "./Components/UseEffect/LoadingIndicator"
 import DeleteData from "./Components/UseEffect/DeleteData"
+import CreateData from "./Components/UseEffect/CreateData"
+import CRUD from "./Components/UseEffect/CRUD"
+import UpdateData from "./Components/UseEffect/UpdateData"
 
 const App = () => {
   // const [category, setCategory] = useState('')
@@ -29,7 +32,10 @@ const App = () => {
       {/* <AsyncAwait/> */}
       {/* <FetchingAxios/> */}
       {/* <LoadingIndicator/> */}
-      <DeleteData/>
+      {/* <DeleteData/> */}
+      {/* <CreateData/> */}
+      <UpdateData/>
+      {/* <CRUD/> */}
     </>
   )
 }
