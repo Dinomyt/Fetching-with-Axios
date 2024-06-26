@@ -16,26 +16,7 @@ const App = () => {
   
   return (
     <>
-      <h1 className="text-center">React Fetching Data Examples, Using Axios, services, Http, CRUD</h1>
-      {/* <FetchingWFetch/> */}
-      
-      {/* <UseEffectExample/> */}
-      {/* <UseEffectExample2/> */}
-      {/* <ProductList category={category}/>
-      <div>
-        <select className="form-select" onChange={(e)=> setCategory(e.target.value)}>
-          <option value="">{category}</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Household">Household</option>
-        </select>
-      </div> */}
-      {/* <AsyncAwait/> */}
-      {/* <FetchingAxios/> */}
-      {/* <LoadingIndicator/> */}
-      {/* <DeleteData/> */}
-      {/* <CreateData/> */}
-      <UpdateData/>
-      {/* <CRUD/> */}
+      <CRUD/>
     </>
   )
 }
